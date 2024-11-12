@@ -1,0 +1,164 @@
+[2024-10-11T23:25:01.889+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-11T23:25:01.906+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: predictions_lstm_dag_v1.predictions_task_venv manual__2024-10-11T23:25:00.606704+00:00 [queued]>
+[2024-10-11T23:25:01.910+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: predictions_lstm_dag_v1.predictions_task_venv manual__2024-10-11T23:25:00.606704+00:00 [queued]>
+[2024-10-11T23:25:01.910+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-10-11T23:25:01.916+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonVirtualenvDecoratedOperator): predictions_task_venv> on 2024-10-11 23:25:00.606704+00:00
+[2024-10-11T23:25:01.922+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=161) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-11T23:25:01.924+0000] {standard_task_runner.py:63} INFO - Started process 163 to run task
+[2024-10-11T23:25:01.924+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'predictions_lstm_dag_v1', 'predictions_task_venv', 'manual__2024-10-11T23:25:00.606704+00:00', '--job-id', '49', '--raw', '--subdir', 'DAGS_FOLDER/prediction_dag.py', '--cfg-path', '/tmp/tmp4x8lz96k']
+[2024-10-11T23:25:01.927+0000] {standard_task_runner.py:91} INFO - Job 49: Subtask predictions_task_venv
+[2024-10-11T23:25:01.969+0000] {task_command.py:426} INFO - Running <TaskInstance: predictions_lstm_dag_v1.predictions_task_venv manual__2024-10-11T23:25:00.606704+00:00 [running]> on host 8a428b66f6b4
+[2024-10-11T23:25:02.024+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Michael Mora' AIRFLOW_CTX_DAG_ID='predictions_lstm_dag_v1' AIRFLOW_CTX_TASK_ID='predictions_task_venv' AIRFLOW_CTX_EXECUTION_DATE='2024-10-11T23:25:00.606704+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-11T23:25:00.606704+00:00'
+[2024-10-11T23:25:02.026+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-11T23:25:02.027+0000] {process_utils.py:183} INFO - Executing cmd: /home/***/.local/bin/python -m virtualenv /tmp/venv3e38s6p3 --system-site-packages --python=python
+[2024-10-11T23:25:02.028+0000] {process_utils.py:187} INFO - Output:
+[2024-10-11T23:25:02.548+0000] {process_utils.py:191} INFO - created virtual environment CPython3.12.3.final.0-64 in 204ms
+[2024-10-11T23:25:02.549+0000] {process_utils.py:191} INFO -   creator CPython3Posix(dest=/tmp/venv3e38s6p3, clear=False, no_vcs_ignore=False, global=True)
+[2024-10-11T23:25:02.549+0000] {process_utils.py:191} INFO -   seeder FromAppData(download=False, pip=bundle, via=copy, app_data_dir=/home/***/.local/share/virtualenv)
+[2024-10-11T23:25:02.550+0000] {process_utils.py:191} INFO -     added seed packages: pip==24.2
+[2024-10-11T23:25:02.550+0000] {process_utils.py:191} INFO -   activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+[2024-10-11T23:25:02.564+0000] {process_utils.py:183} INFO - Executing cmd: /tmp/venv3e38s6p3/bin/pip install -r /tmp/venv3e38s6p3/requirements.txt
+[2024-10-11T23:25:02.565+0000] {process_utils.py:187} INFO - Output:
+[2024-10-11T23:25:03.632+0000] {process_utils.py:191} INFO - Collecting joblib (from -r /tmp/venv3e38s6p3/requirements.txt (line 1))
+[2024-10-11T23:25:03.634+0000] {process_utils.py:191} INFO -   Using cached joblib-1.4.2-py3-none-any.whl.metadata (5.4 kB)
+[2024-10-11T23:25:03.772+0000] {process_utils.py:191} INFO - Collecting keras (from -r /tmp/venv3e38s6p3/requirements.txt (line 2))
+[2024-10-11T23:25:03.774+0000] {process_utils.py:191} INFO -   Using cached keras-3.6.0-py3-none-any.whl.metadata (5.8 kB)
+[2024-10-11T23:25:03.776+0000] {process_utils.py:191} INFO - Requirement already satisfied: numpy in /home/***/.local/lib/python3.12/site-packages (from -r /tmp/venv3e38s6p3/requirements.txt (line 3)) (1.26.4)
+[2024-10-11T23:25:03.778+0000] {process_utils.py:191} INFO - Requirement already satisfied: pandas in /home/***/.local/lib/python3.12/site-packages (from -r /tmp/venv3e38s6p3/requirements.txt (line 4)) (2.1.4)
+[2024-10-11T23:25:03.835+0000] {process_utils.py:191} INFO - Collecting scikit-learn (from -r /tmp/venv3e38s6p3/requirements.txt (line 5))
+[2024-10-11T23:25:03.837+0000] {process_utils.py:191} INFO -   Using cached scikit_learn-1.5.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (13 kB)
+[2024-10-11T23:25:03.924+0000] {process_utils.py:191} INFO - Collecting scipy (from -r /tmp/venv3e38s6p3/requirements.txt (line 6))
+[2024-10-11T23:25:03.926+0000] {process_utils.py:191} INFO -   Using cached scipy-1.14.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (113 kB)
+[2024-10-11T23:25:04.011+0000] {process_utils.py:191} INFO - Collecting tensorflow (from -r /tmp/venv3e38s6p3/requirements.txt (line 7))
+[2024-10-11T23:25:04.012+0000] {process_utils.py:191} INFO -   Using cached tensorflow-2.17.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.1 kB)
+[2024-10-11T23:25:04.030+0000] {process_utils.py:191} INFO - Collecting absl-py (from keras->-r /tmp/venv3e38s6p3/requirements.txt (line 2))
+[2024-10-11T23:25:04.031+0000] {process_utils.py:191} INFO -   Using cached absl_py-2.1.0-py3-none-any.whl.metadata (2.3 kB)
+[2024-10-11T23:25:04.032+0000] {process_utils.py:191} INFO - Requirement already satisfied: rich in /home/***/.local/lib/python3.12/site-packages (from keras->-r /tmp/venv3e38s6p3/requirements.txt (line 2)) (13.7.1)
+[2024-10-11T23:25:04.054+0000] {process_utils.py:191} INFO - Collecting namex (from keras->-r /tmp/venv3e38s6p3/requirements.txt (line 2))
+[2024-10-11T23:25:04.054+0000] {process_utils.py:191} INFO -   Using cached namex-0.0.8-py3-none-any.whl.metadata (246 bytes)
+[2024-10-11T23:25:04.098+0000] {process_utils.py:191} INFO - Collecting h5py (from keras->-r /tmp/venv3e38s6p3/requirements.txt (line 2))
+[2024-10-11T23:25:04.099+0000] {process_utils.py:191} INFO -   Using cached h5py-3.12.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (2.5 kB)
+[2024-10-11T23:25:04.156+0000] {process_utils.py:191} INFO - Collecting optree (from keras->-r /tmp/venv3e38s6p3/requirements.txt (line 2))
+[2024-10-11T23:25:04.157+0000] {process_utils.py:191} INFO -   Using cached optree-0.13.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (47 kB)
+[2024-10-11T23:25:04.212+0000] {process_utils.py:191} INFO - Collecting ml-dtypes (from keras->-r /tmp/venv3e38s6p3/requirements.txt (line 2))
+[2024-10-11T23:25:04.216+0000] {process_utils.py:191} INFO -   Using cached ml_dtypes-0.5.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (21 kB)
+[2024-10-11T23:25:04.225+0000] {process_utils.py:191} INFO - Requirement already satisfied: packaging in /home/***/.local/lib/python3.12/site-packages (from keras->-r /tmp/venv3e38s6p3/requirements.txt (line 2)) (24.0)
+[2024-10-11T23:25:04.240+0000] {process_utils.py:191} INFO - Requirement already satisfied: python-dateutil>=2.8.2 in /home/***/.local/lib/python3.12/site-packages (from pandas->-r /tmp/venv3e38s6p3/requirements.txt (line 4)) (2.9.0.post0)
+[2024-10-11T23:25:04.243+0000] {process_utils.py:191} INFO - Requirement already satisfied: pytz>=2020.1 in /home/***/.local/lib/python3.12/site-packages (from pandas->-r /tmp/venv3e38s6p3/requirements.txt (line 4)) (2024.1)
+[2024-10-11T23:25:04.244+0000] {process_utils.py:191} INFO - Requirement already satisfied: tzdata>=2022.1 in /home/***/.local/lib/python3.12/site-packages (from pandas->-r /tmp/venv3e38s6p3/requirements.txt (line 4)) (2024.1)
+[2024-10-11T23:25:04.274+0000] {process_utils.py:191} INFO - Collecting threadpoolctl>=3.1.0 (from scikit-learn->-r /tmp/venv3e38s6p3/requirements.txt (line 5))
+[2024-10-11T23:25:04.275+0000] {process_utils.py:191} INFO -   Using cached threadpoolctl-3.5.0-py3-none-any.whl.metadata (13 kB)
+[2024-10-11T23:25:04.302+0000] {process_utils.py:191} INFO - Collecting astunparse>=1.6.0 (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7))
+[2024-10-11T23:25:04.304+0000] {process_utils.py:191} INFO -   Using cached astunparse-1.6.3-py2.py3-none-any.whl.metadata (4.4 kB)
+[2024-10-11T23:25:04.420+0000] {process_utils.py:191} INFO - Collecting flatbuffers>=24.3.25 (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7))
+[2024-10-11T23:25:04.421+0000] {process_utils.py:191} INFO -   Using cached flatbuffers-24.3.25-py2.py3-none-any.whl.metadata (850 bytes)
+[2024-10-11T23:25:04.443+0000] {process_utils.py:191} INFO - Collecting gast!=0.5.0,!=0.5.1,!=0.5.2,>=0.2.1 (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7))
+[2024-10-11T23:25:04.444+0000] {process_utils.py:191} INFO -   Using cached gast-0.6.0-py3-none-any.whl.metadata (1.3 kB)
+[2024-10-11T23:25:04.460+0000] {process_utils.py:191} INFO - Collecting google-pasta>=0.1.1 (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7))
+[2024-10-11T23:25:04.461+0000] {process_utils.py:191} INFO -   Using cached google_pasta-0.2.0-py3-none-any.whl.metadata (814 bytes)
+[2024-10-11T23:25:04.490+0000] {process_utils.py:191} INFO - Collecting libclang>=13.0.0 (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7))
+[2024-10-11T23:25:04.490+0000] {process_utils.py:191} INFO -   Using cached libclang-18.1.1-py2.py3-none-manylinux2014_aarch64.whl.metadata (5.2 kB)
+[2024-10-11T23:25:04.492+0000] {process_utils.py:191} INFO - Collecting ml-dtypes (from keras->-r /tmp/venv3e38s6p3/requirements.txt (line 2))
+[2024-10-11T23:25:04.493+0000] {process_utils.py:191} INFO -   Using cached ml_dtypes-0.4.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (20 kB)
+[2024-10-11T23:25:04.513+0000] {process_utils.py:191} INFO - Collecting opt-einsum>=2.3.2 (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7))
+[2024-10-11T23:25:04.514+0000] {process_utils.py:191} INFO -   Using cached opt_einsum-3.4.0-py3-none-any.whl.metadata (6.3 kB)
+[2024-10-11T23:25:04.516+0000] {process_utils.py:191} INFO - Requirement already satisfied: protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<5.0.0dev,>=3.20.3 in /home/***/.local/lib/python3.12/site-packages (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (4.25.3)
+[2024-10-11T23:25:04.516+0000] {process_utils.py:191} INFO - Requirement already satisfied: requests<3,>=2.21.0 in /home/***/.local/lib/python3.12/site-packages (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (2.31.0)
+[2024-10-11T23:25:04.517+0000] {process_utils.py:191} INFO - Requirement already satisfied: setuptools in /home/***/.local/lib/python3.12/site-packages (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (66.1.1)
+[2024-10-11T23:25:04.518+0000] {process_utils.py:191} INFO - Requirement already satisfied: six>=1.12.0 in /home/***/.local/lib/python3.12/site-packages (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (1.16.0)
+[2024-10-11T23:25:04.518+0000] {process_utils.py:191} INFO - Requirement already satisfied: termcolor>=1.1.0 in /home/***/.local/lib/python3.12/site-packages (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (2.4.0)
+[2024-10-11T23:25:04.519+0000] {process_utils.py:191} INFO - Requirement already satisfied: typing-extensions>=3.6.6 in /home/***/.local/lib/python3.12/site-packages (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (4.11.0)
+[2024-10-11T23:25:04.519+0000] {process_utils.py:191} INFO - Requirement already satisfied: wrapt>=1.11.0 in /home/***/.local/lib/python3.12/site-packages (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (1.16.0)
+[2024-10-11T23:25:04.520+0000] {process_utils.py:191} INFO - Requirement already satisfied: grpcio<2.0,>=1.24.3 in /home/***/.local/lib/python3.12/site-packages (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (1.63.0)
+[2024-10-11T23:25:04.600+0000] {process_utils.py:191} INFO - Collecting tensorboard<2.18,>=2.17 (from tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7))
+[2024-10-11T23:25:04.602+0000] {process_utils.py:191} INFO -   Using cached tensorboard-2.17.1-py3-none-any.whl.metadata (1.6 kB)
+[2024-10-11T23:25:04.607+0000] {process_utils.py:191} INFO - Requirement already satisfied: wheel<1.0,>=0.23.0 in /usr/local/lib/python3.12/site-packages (from astunparse>=1.6.0->tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (0.43.0)
+[2024-10-11T23:25:04.618+0000] {process_utils.py:191} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.12/site-packages (from requests<3,>=2.21.0->tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (3.3.2)
+[2024-10-11T23:25:04.619+0000] {process_utils.py:191} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.12/site-packages (from requests<3,>=2.21.0->tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (3.7)
+[2024-10-11T23:25:04.620+0000] {process_utils.py:191} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.12/site-packages (from requests<3,>=2.21.0->tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (2.2.1)
+[2024-10-11T23:25:04.621+0000] {process_utils.py:191} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.12/site-packages (from requests<3,>=2.21.0->tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (2024.2.2)
+[2024-10-11T23:25:04.645+0000] {process_utils.py:191} INFO - Collecting markdown>=2.6.8 (from tensorboard<2.18,>=2.17->tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7))
+[2024-10-11T23:25:04.646+0000] {process_utils.py:191} INFO -   Using cached Markdown-3.7-py3-none-any.whl.metadata (7.0 kB)
+[2024-10-11T23:25:04.819+0000] {process_utils.py:191} INFO - Collecting tensorboard-data-server<0.8.0,>=0.7.0 (from tensorboard<2.18,>=2.17->tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7))
+[2024-10-11T23:25:04.821+0000] {process_utils.py:191} INFO -   Using cached tensorboard_data_server-0.7.2-py3-none-any.whl.metadata (1.1 kB)
+[2024-10-11T23:25:04.824+0000] {process_utils.py:191} INFO - Requirement already satisfied: werkzeug>=1.0.1 in /home/***/.local/lib/python3.12/site-packages (from tensorboard<2.18,>=2.17->tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (2.2.3)
+[2024-10-11T23:25:04.842+0000] {process_utils.py:191} INFO - Requirement already satisfied: markdown-it-py>=2.2.0 in /home/***/.local/lib/python3.12/site-packages (from rich->keras->-r /tmp/venv3e38s6p3/requirements.txt (line 2)) (3.0.0)
+[2024-10-11T23:25:04.843+0000] {process_utils.py:191} INFO - Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /home/***/.local/lib/python3.12/site-packages (from rich->keras->-r /tmp/venv3e38s6p3/requirements.txt (line 2)) (2.17.2)
+[2024-10-11T23:25:04.850+0000] {process_utils.py:191} INFO - Requirement already satisfied: mdurl~=0.1 in /home/***/.local/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich->keras->-r /tmp/venv3e38s6p3/requirements.txt (line 2)) (0.1.2)
+[2024-10-11T23:25:04.854+0000] {process_utils.py:191} INFO - Requirement already satisfied: MarkupSafe>=2.1.1 in /home/***/.local/lib/python3.12/site-packages (from werkzeug>=1.0.1->tensorboard<2.18,>=2.17->tensorflow->-r /tmp/venv3e38s6p3/requirements.txt (line 7)) (2.1.5)
+[2024-10-11T23:25:04.859+0000] {process_utils.py:191} INFO - Using cached joblib-1.4.2-py3-none-any.whl (301 kB)
+[2024-10-11T23:25:04.861+0000] {process_utils.py:191} INFO - Using cached keras-3.6.0-py3-none-any.whl (1.2 MB)
+[2024-10-11T23:25:04.865+0000] {process_utils.py:191} INFO - Using cached scikit_learn-1.5.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (12.1 MB)
+[2024-10-11T23:25:04.898+0000] {process_utils.py:191} INFO - Using cached scipy-1.14.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (35.3 MB)
+[2024-10-11T23:25:05.002+0000] {process_utils.py:191} INFO - Using cached tensorflow-2.17.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (224.0 MB)
+[2024-10-11T23:25:05.876+0000] {process_utils.py:191} INFO - Using cached absl_py-2.1.0-py3-none-any.whl (133 kB)
+[2024-10-11T23:25:05.881+0000] {process_utils.py:191} INFO - Using cached astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+[2024-10-11T23:25:05.881+0000] {process_utils.py:191} INFO - Using cached flatbuffers-24.3.25-py2.py3-none-any.whl (26 kB)
+[2024-10-11T23:25:05.882+0000] {process_utils.py:191} INFO - Using cached gast-0.6.0-py3-none-any.whl (21 kB)
+[2024-10-11T23:25:05.884+0000] {process_utils.py:191} INFO - Using cached google_pasta-0.2.0-py3-none-any.whl (57 kB)
+[2024-10-11T23:25:05.886+0000] {process_utils.py:191} INFO - Using cached h5py-3.12.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (5.2 MB)
+[2024-10-11T23:25:05.894+0000] {process_utils.py:191} INFO - Using cached libclang-18.1.1-py2.py3-none-manylinux2014_aarch64.whl (23.8 MB)
+[2024-10-11T23:25:05.933+0000] {process_utils.py:191} INFO - Using cached ml_dtypes-0.4.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.2 MB)
+[2024-10-11T23:25:05.938+0000] {process_utils.py:191} INFO - Using cached opt_einsum-3.4.0-py3-none-any.whl (71 kB)
+[2024-10-11T23:25:05.940+0000] {process_utils.py:191} INFO - Using cached tensorboard-2.17.1-py3-none-any.whl (5.5 MB)
+[2024-10-11T23:25:05.947+0000] {process_utils.py:191} INFO - Using cached threadpoolctl-3.5.0-py3-none-any.whl (18 kB)
+[2024-10-11T23:25:05.949+0000] {process_utils.py:191} INFO - Using cached namex-0.0.8-py3-none-any.whl (5.8 kB)
+[2024-10-11T23:25:05.950+0000] {process_utils.py:191} INFO - Using cached optree-0.13.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (332 kB)
+[2024-10-11T23:25:05.952+0000] {process_utils.py:191} INFO - Using cached Markdown-3.7-py3-none-any.whl (106 kB)
+[2024-10-11T23:25:05.954+0000] {process_utils.py:191} INFO - Using cached tensorboard_data_server-0.7.2-py3-none-any.whl (2.4 kB)
+[2024-10-11T23:25:06.793+0000] {process_utils.py:191} INFO - Installing collected packages: namex, libclang, flatbuffers, threadpoolctl, tensorboard-data-server, scipy, optree, opt-einsum, ml-dtypes, markdown, joblib, h5py, google-pasta, gast, astunparse, absl-py, tensorboard, scikit-learn, keras, tensorflow
+[2024-10-11T23:25:18.829+0000] {process_utils.py:191} INFO - Successfully installed absl-py-2.1.0 astunparse-1.6.3 flatbuffers-24.3.25 gast-0.6.0 google-pasta-0.2.0 h5py-3.12.1 joblib-1.4.2 keras-3.6.0 libclang-18.1.1 markdown-3.7 ml-dtypes-0.4.1 namex-0.0.8 opt-einsum-3.4.0 optree-0.13.0 scikit-learn-1.5.2 scipy-1.14.1 tensorboard-2.17.1 tensorboard-data-server-0.7.2 tensorflow-2.17.0 threadpoolctl-3.5.0
+[2024-10-11T23:25:19.331+0000] {process_utils.py:183} INFO - Executing cmd: /tmp/venv3e38s6p3/bin/python /tmp/venv-calln_tvx05a/script.py /tmp/venv-calln_tvx05a/script.in /tmp/venv-calln_tvx05a/script.out /tmp/venv-calln_tvx05a/string_args.txt /tmp/venv-calln_tvx05a/termination.log
+[2024-10-11T23:25:19.333+0000] {process_utils.py:187} INFO - Output:
+[2024-10-11T23:25:23.629+0000] {process_utils.py:191} INFO - Traceback (most recent call last):
+[2024-10-11T23:25:23.633+0000] {process_utils.py:191} INFO -   File "/tmp/venv-calln_tvx05a/script.py", line 56, in <module>
+[2024-10-11T23:25:23.633+0000] {process_utils.py:191} INFO -     res = run_predictions_task(*arg_dict["args"], **arg_dict["kwargs"])
+[2024-10-11T23:25:23.634+0000] {process_utils.py:191} INFO -           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-10-11T23:25:23.635+0000] {process_utils.py:191} INFO -   File "/tmp/venv-calln_tvx05a/script.py", line 21, in run_predictions_task
+[2024-10-11T23:25:23.636+0000] {process_utils.py:191} INFO -     model_file = load_model("/models/model_net_lstm.keras")
+[2024-10-11T23:25:23.636+0000] {process_utils.py:191} INFO -                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-10-11T23:25:23.637+0000] {process_utils.py:191} INFO -   File "/tmp/venv3e38s6p3/lib/python3.12/site-packages/keras/src/saving/saving_api.py", line 200, in load_model
+[2024-10-11T23:25:23.637+0000] {process_utils.py:191} INFO -     raise ValueError(
+[2024-10-11T23:25:23.638+0000] {process_utils.py:191} INFO - ValueError: File not found: filepath=/models/model_net_lstm.keras. Please ensure the file is an accessible `.keras` zip file.
+[2024-10-11T23:25:24.898+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-11T23:25:24.923+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 437, in execute
+    return super().execute(context=serializable_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 759, in execute_callable
+    result = self._execute_python_callable_in_subprocess(python_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 514, in _execute_python_callable_in_subprocess
+    raise AirflowException(error_msg) from None
+airflow.exceptions.AirflowException: Process returned non-zero exit status 1.
+File not found: filepath=/models/model_net_lstm.keras. Please ensure the file is an accessible `.keras` zip file.
+[2024-10-11T23:25:24.937+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=predictions_lstm_dag_v1, task_id=predictions_task_venv, run_id=manual__2024-10-11T23:25:00.606704+00:00, execution_date=20241011T232500, start_date=20241011T232501, end_date=20241011T232524
+[2024-10-11T23:25:24.950+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 49 for task predictions_task_venv (Process returned non-zero exit status 1.
+File not found: filepath=/models/model_net_lstm.keras. Please ensure the file is an accessible `.keras` zip file.; 163)
+[2024-10-11T23:25:24.981+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-10-11T23:25:24.998+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-11T23:25:24.999+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
